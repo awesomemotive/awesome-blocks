@@ -37,7 +37,6 @@ function awesome_blocks_init() {
 		register_block_type( __DIR__ . '/build/' . $blocks_dir );
     }
 
-
     wp_localize_script(
         'awesome-blocks-collapsible-text-editor-script',
         'awesomeBlocksCollapsibleTextVars',

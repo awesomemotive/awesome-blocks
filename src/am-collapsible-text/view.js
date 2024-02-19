@@ -22,23 +22,14 @@
 
 import { textMaxLength } from './constants';
 
-//'.wp-block-awesome-blocks-collapsible-text'
-
 document.addEventListener('DOMContentLoaded', (event) => {
     let buttons = document.querySelectorAll( '.wp-block-awesome-blocks-collapsible-text .am-collapsible-btn' );
-    buttons.forEach((button) => {
-        button.addEventListener('click', ( el) => {
-            // button.classList.add('blue');
-            // let block = this.closest('.wp-block-awesome-blocks-collapsible-text')
-
-            let currentBtn = el.target;
-
+    buttons.forEach(( button ) => {
+        button.addEventListener('click', ( event) => {
+            let currentBtn = event.target;
             let blockWrapper = currentBtn.parentElement;
-
             blockWrapper.classList.toggle( 'expand' );
-
             let content = blockWrapper.firstElementChild.dataset.content;
-
 
             if ( blockWrapper.classList.contains( 'expand' ) ) {
                 currentBtn.innerHTML = currentBtn.dataset.collapseButtonText;
@@ -51,7 +42,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     blockWrapper.firstElementChild.innerHTML = content;
                 }
             }
+        } );
+    } );
+
+    document.querySelectorAll( '.am-collapsible-link[data-anchor]' ).forEach(( link) => {
+        link.addEventListener('click', ( event) => {
+            let currentLink = event.target;
+            if ( currentLink.dataset.anchor == 'SCROLL_TO_TOP' ) {
+                window.scrollTo( {
+                    left: 0,
+                    top: 0,
+                    behavior: "smooth",
+                } );
+            } else if ( currentLink.dataset.anchor == 'SCROLL_TO_BOTTOM' ) {
+                window.scrollTo( {
+                    left: 0,
+                    top: document.body.scrollHeight,
+                    behavior: "smooth",
+                } );
+            }
+            event.preventDefault();
         });
-    });
+    } );
 
 });
