@@ -1,0 +1,94 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "awesome-blocks/collapsible-text",
+	"version": "0.1.0",
+	"title": "Awesome Collapsible Text",
+	"category": "text",
+	"icon": "media-text",
+	"description": "Collapsible texts expand to reveal more on click.",
+	"example": {},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "Collapsible text is perfect for longer content like paragraphs and descriptions. It’s a great way to give people more information while keeping your layout clean. Link your text to anything, including an external website or a different page. You can set your text box to expand and collapse when people click, so they can read more or less info."
+		},
+		"buttonDo": {
+			"enum": [ "expand", "link" ],
+			"default": "expand"
+		},
+		"expandButtonText": {
+			"type": "string",
+			"default": "Show More"
+		},
+		"collapseButtonText": {
+			"type": "string",
+			"default": "Show Less"
+		},
+		"linkButtonText": {
+			"type": "string",
+			"default": "Read More"
+		},
+		"linksTo": {
+			"enum": [ "none", "page", "web_address", "anchor", "top_bottom_of_page", "document", "email", "phone_number" ],
+			"default": "page"
+		},
+		"linkToPage": {
+			"type": "integer",
+			"default": 0
+		},
+		"linksOpen": {
+			"enum": [ "new", "current" ],
+			"default": "current"
+		},
+		"anchor": {
+			"type": "string",
+			"default": ""
+		},
+		"webAddress": {
+			"type": "string",
+			"default": ""
+		},
+		"topBottomOfThePage": {
+			"enum": [ "top", "bottom" ],
+			"default": "top"
+		},
+		"documentId": {
+			"type": "integer",
+			"default": 0
+		},
+		"emailAddress": {
+			"type": "string",
+			"default": ""
+		},
+		"emailSubject": {
+			"type": "string",
+			"default": ""
+		},
+		"phoneNumber": {
+			"type": "string",
+			"default": ""
+		},
+		"accessibleName": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlTag": {
+			"enum": [ "p", "div", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote" ],
+			"default": "p"
+		}
+	},
+	"supports": {
+		"html": true,
+		"color": {},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"textdomain": "awesome-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
