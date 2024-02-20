@@ -49,7 +49,7 @@ $textMaxLength = 131;
                 break;
 			case 'document':
                 ?>
-                <a href="<?php echo $get_permalink( $attributes["documentId"] ); ?>" target="_self" class="am-collapsible-link"><?php echo esc_html( $attributes["linkButtonText"] ); ?></a>
+                <a href="<?php echo get_permalink( $attributes["documentId"] ); ?>" target="_self" class="am-collapsible-link"><?php echo esc_html( $attributes["linkButtonText"] ); ?></a>
                 <?php
                 break;
 			case 'email':
