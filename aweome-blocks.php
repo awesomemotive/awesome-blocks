@@ -31,7 +31,8 @@ require_once( AWESOME_BLOCKS_DIR . 'inc/helpers.php' );
  */
 function awesome_blocks_init() {
     $blocks_dirs = [
-        'am-collapsible-text',
+        'collapsible-text',
+		'tabs',
     ];
     foreach ( $blocks_dirs as $blocks_dir ) {
 		register_block_type( __DIR__ . '/build/' . $blocks_dir );

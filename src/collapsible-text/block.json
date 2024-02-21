@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "awesome-blocks/collapsible-text",
 	"version": "0.1.0",
-	"title": "Awesome Collapsible Text",
+	"title": "Collapsible Text",
 	"category": "text",
 	"icon": "media-text",
 	"description": "Collapsible texts expand to reveal more on click.",
