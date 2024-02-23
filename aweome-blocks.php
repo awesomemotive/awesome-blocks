@@ -35,17 +35,7 @@ function awesome_blocks_init() {
 		'tabs',
     ];
     foreach ( $blocks_dirs as $blocks_dir ) {
-		register_block_type( __DIR__ . '/build/' . $blocks_dir );
+		register_block_type( __DIR__ . '/build/blocks/blocks/' . $blocks_dir );
     }
 }
 add_action( 'init', 'awesome_blocks_init' );
-
-add_action( 'enqueue_block_editor_assets', function() {
-	wp_localize_script(
-		'awesome-blocks-collapsible-text-editor-script',
-		'awesomeBlocksCollapsibleTextVars',
-		[
-			'pageOptions' => awb_get_page_options(),
-		]
-	);
-} );

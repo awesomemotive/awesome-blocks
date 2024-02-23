@@ -13,6 +13,10 @@
 			"type": "string",
 			"default": "Collapsible text is perfect for longer content like paragraphs and descriptions. It’s a great way to give people more information while keeping your layout clean. Link your text to anything, including an external website or a different page. You can set your text box to expand and collapse when people click, so they can read more or less info."
 		},
+		"textMaxLength": {
+			"type": "integer",
+			"default": 131
+		},
 		"buttonDo": {
 			"enum": [ "expand", "link" ],
 			"default": "expand"

@@ -20,7 +20,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 
-import { textMaxLength } from './constants';
+const textMaxLength = 131;
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let buttons = document.querySelectorAll( '.wp-block-awesome-blocks-collapsible-text .am-collapsible-btn' );

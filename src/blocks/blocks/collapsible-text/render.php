@@ -3,11 +3,10 @@
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 
-$textMaxLength = 131;
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?> <?php if ( ! empty( $attributes["accessibleName"] ) ) { ?>aria-label="<?php echo esc_attr( $attributes["accessibleName"] ); ?>" <?php } ?>>
 	<<?php echo $attributes["htmlTag"]; ?> data-content="<?php echo esc_attr( $attributes["content"] ); ?>">
-        <?php echo esc_html( substr( $attributes["content"], 0, $textMaxLength ) );?> <?php echo strlen( $attributes["content"] ) > $textMaxLength ? '...' : ''; ?>
+        <?php echo esc_html( substr( $attributes["content"], 0, $attributes["textMaxLength"] ) );?> <?php echo strlen( $attributes["content"] ) > $attributes["textMaxLength"] ? '...' : ''; ?>
     </<?php echo $attributes["htmlTag"]; ?>>
     <?php
     if ( $attributes["buttonDo"]  == 'expand' ) {
