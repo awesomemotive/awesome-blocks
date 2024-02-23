@@ -1,10 +1,10 @@
 {
-	"name": "my-block",
+	"name": "awesome-blocks",
 	"version": "0.1.0",
-	"description": "My test block",
+	"description": "Awesome Blocks",
 	"author": "pmbaldha",
 	"license": "GPL-2.0-or-later",
-	"homepage": "my-block",
+	"homepage": "awesome-blocks",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",

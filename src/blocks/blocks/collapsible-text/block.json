@@ -34,7 +34,16 @@
 			"default": "Read More"
 		},
 		"linksTo": {
-			"enum": [ "none", "page", "web_address", "anchor", "top_bottom_of_page", "document", "email", "phone_number" ],
+			"enum": [
+				"none",
+				"page",
+				"web_address",
+				"anchor",
+				"top_bottom_of_page",
+				"document",
+				"email",
+				"phone_number"
+			],
 			"default": "page"
 		},
 		"linkToPage": {
@@ -78,7 +87,17 @@
 			"default": ""
 		},
 		"htmlTag": {
-			"enum": [ "p", "div", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote" ],
+			"enum": [
+				"p",
+				"div",
+				"h1",
+				"h2",
+				"h3",
+				"h4",
+				"h5",
+				"h6",
+				"blockquote"
+			],
 			"default": "p"
 		}
 	},
