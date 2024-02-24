@@ -23,13 +23,15 @@
             case 'page':
                 $target = ( $attributes["linksOpen"] == "new" ) ? "_blank" : "_self";
                 ?>
-                <a href="<?php echo esc_url( get_permalink( $attributes["linkToPage"] ) ); ?>" target="<?php echo esc_attr( $target ); ?>" class="am-collapsible-link"><?php echo esc_html( $attributes["linkButtonText"] ); ?></a>
+                <a href="<?php echo esc_url( get_permalink( $attributes["linkToPage"] ) ); ?>" target="<?php echo esc_attr( $target ); ?>" class="am-collapsible-link" <?php if ( ! empty( $attributes["rel"] ) ) { ?>rel="<?php echo esc_attr( implode( ' ', $attributes["rel"] ) ); ?>"<?php } ?>>
+					<?php echo esc_html( $attributes["linkButtonText"] ); ?>
+				</a>
                 <?php
                 break;
             case 'web_address':
                 $target = ( $attributes["linksOpen"] == "new" ) ? "_blank" : "_self";
                 ?>
-                <a href="<?php echo esc_url( $attributes["webAddress"] ); ?>" target="<?php echo esc_attr( $target ); ?>" class="am-collapsible-link"><?php echo esc_html( $attributes["linkButtonText"] ); ?></a>
+                <a href="<?php echo esc_url( $attributes["webAddress"] ); ?>" target="<?php echo esc_attr( $target ); ?>" class="am-collapsible-link" <?php if ( ! empty( $attributes["rel"] ) ) { ?>rel="<?php echo esc_attr( implode( ' ', $attributes["rel"] ) ); ?>"<?php } ?>><?php echo esc_html( $attributes["linkButtonText"] ); ?></a>
                 <?php
                 break;
 			case 'anchor':

@@ -1,18 +1,16 @@
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import {
 	BaseControl,
-	PanelBody,
 	RadioControl,
-	TextareaControl,
 	TextControl,
 	SelectControl,
 	__experimentalInputControl as InputControl,
-	CustomSelectControl,
-	CheckboxControl,
 	Button,
 } from '@wordpress/components';
+
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
+
 const LinksTo = ( { attributes, setAttributes } ) => {
 	let pageOptions = [
 		{

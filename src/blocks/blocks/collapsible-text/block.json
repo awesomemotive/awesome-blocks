@@ -58,6 +58,10 @@
 			"type": "string",
 			"default": ""
 		},
+		"rel": {
+			"type": "array",
+			"default": []
+		},
 		"anchor": {
 			"type": "string",
 			"default": ""

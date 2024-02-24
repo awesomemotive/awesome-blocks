@@ -17,5 +17,8 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^27.3.0"
+	},
+	"dependencies": {
+		"react-select": "^5.8.0"
 	}
 }
