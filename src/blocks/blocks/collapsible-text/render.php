@@ -5,7 +5,7 @@
 
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?> <?php if ( ! empty( $attributes["accessibleName"] ) ) { ?>aria-label="<?php echo esc_attr( $attributes["accessibleName"] ); ?>" <?php } ?>>
-	<<?php echo $attributes["htmlTag"]; ?> data-content="<?php echo esc_attr( $attributes["content"] ); ?>">
+	<<?php echo $attributes["htmlTag"]; ?> data-content="<?php echo esc_attr( $attributes["content"] ); ?>" data-text-max-length="<?php echo esc_attr( $attributes["textMaxLength"] ); ?>" >
         <?php echo esc_html( substr( $attributes["content"], 0, $attributes["textMaxLength"] ) );?> <?php echo strlen( $attributes["content"] ) > $attributes["textMaxLength"] ? '...' : ''; ?>
     </<?php echo $attributes["htmlTag"]; ?>>
     <?php

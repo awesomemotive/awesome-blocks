@@ -20,8 +20,6 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 
-const textMaxLength = 131;
-
 document.addEventListener( 'DOMContentLoaded', ( event ) => {
 	let buttons = document.querySelectorAll(
 		'.wp-block-awesome-blocks-collapsible-text .am-collapsible-btn'
@@ -32,6 +30,7 @@ document.addEventListener( 'DOMContentLoaded', ( event ) => {
 			let blockWrapper = currentBtn.parentElement;
 			blockWrapper.classList.toggle( 'expand' );
 			let content = blockWrapper.firstElementChild.dataset.content;
+			let textMaxLength = Number( blockWrapper.firstElementChild.dataset.textMaxLength );
 
 			if ( blockWrapper.classList.contains( 'expand' ) ) {
 				currentBtn.innerHTML = currentBtn.dataset.collapseButtonText;
