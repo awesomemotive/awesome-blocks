@@ -106,11 +106,19 @@
 		}
 	},
 	"supports": {
-		"html": true,
-		"color": {},
+		"align": true,
+		"alignWide": true,
+		"color": true,
+		"customClassName": true,
+		"interactivity": false,
 		"spacing": {
 			"margin": true,
-			"padding": true
+			"padding": true,
+			"blockGap": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
 		}
 	},
 	"textdomain": "awesome-blocks",
