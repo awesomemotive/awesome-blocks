@@ -7,6 +7,7 @@
 	"category": "text",
 	"icon": "media-text",
 	"description": "Collapsible texts expand to reveal more on click.",
+	"keywords": [ "collapse", "text", "expand", "collapsible", "awesome" ],
 	"example": {},
 	"attributes": {
 		"content": {
