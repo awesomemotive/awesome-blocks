@@ -1,0 +1,63 @@
+.o-toggle-group-control {
+	display: flex;
+	background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+	border: 1px solid rgb(117, 117, 117);
+	border-radius: 2px;
+	min-height: 36px;
+	min-width: 0px;
+	padding: 2px;
+
+	&.has-icon {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.o-toggle-option {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			height: 30px;
+			width: 100%;
+			box-shadow: none;
+
+			&:hover {
+				box-shadow: none;
+			}
+
+			.dashicon {
+				color: #2f2f2f;
+			}
+
+			svg {
+				fill: #2f2f2f;
+			}
+
+			&.is-primary {
+				color: #fff;
+				background-color: #000;
+				box-shadow: none;
+				border-radius: 0;
+
+				.dashicon {
+					color: #fff;
+				}
+
+				svg {
+					fill: #fff;
+				}
+			}
+
+			&.is-secondary {
+				color: #000;
+				box-shadow: none;
+				border-radius: 0px;
+			}
+		}
+	}
+
+}

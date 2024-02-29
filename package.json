@@ -19,6 +19,8 @@
 		"@wordpress/scripts": "^27.3.0"
 	},
 	"dependencies": {
+		"@wordpress/icons": "^9.43.0",
+		"classnames": "^2.5.1",
 		"react-select": "^5.8.0"
 	}
 }

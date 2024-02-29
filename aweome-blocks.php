@@ -30,7 +30,8 @@ define( 'AWESOME_BLOCKS_DIR', plugin_dir_path( __FILE__ ) );
 function awesome_blocks_init() {
     $blocks_dirs = [
         'collapsible-text',
-		'tabs',
+		'tabs/group',
+		'tabs/item',
     ];
     foreach ( $blocks_dirs as $blocks_dir ) {
 		register_block_type( __DIR__ . '/build/blocks/blocks/' . $blocks_dir );
