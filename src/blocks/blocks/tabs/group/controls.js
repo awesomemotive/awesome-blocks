@@ -1,14 +1,6 @@
-/**
- * External dependencies
- */
-import { chevronLeft, chevronRight, edit } from '@wordpress/icons';
-
-/**
- * WordPress dependencies
- */
 import { __ } from '@wordpress/i18n';
-
 import { BlockControls } from '@wordpress/block-editor';
+import { chevronLeft, chevronRight, edit, cancelCircleFilled } from '@wordpress/icons';
 
 import {
 	ToolbarButton,
@@ -19,8 +11,11 @@ const Controls = ({
 					  children,
 					  selectedTab,
 					  moveTab,
-					  selectTab
+					  selectTab,
+					  deleteTab
 				  }) => {
+
+
 
 	/**
 	 * @type {(number|undefined)} The position of the selected tab
@@ -72,6 +67,15 @@ const Controls = ({
 					disabled={ children?.length - 1 === index }
 					className="wp-block-awesome-blocks-tabs-toolbar-mover"
 					onClick={ () => moveTabTo( 'right' ) }
+				/>
+			</ToolbarGroup>
+			<ToolbarGroup label={ __( 'Delete', 'awesome-blocks' ) }>
+				<ToolbarButton
+					label={ __( 'Delete tab', 'awesome-blocks' ) }
+					icon={ cancelCircleFilled }
+					iconSize={ 24 }
+					className="wp-block-awesome-blocks-tabs-toolbar-delete"
+					onClick={ () => deleteTab( selectedTab ) }
 				/>
 			</ToolbarGroup>
 		</BlockControls>
