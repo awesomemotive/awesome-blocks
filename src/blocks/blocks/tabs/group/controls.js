@@ -1,26 +1,27 @@
 import { __ } from '@wordpress/i18n';
 import { BlockControls } from '@wordpress/block-editor';
-import { chevronLeft, chevronRight, edit, cancelCircleFilled } from '@wordpress/icons';
-
 import {
-	ToolbarButton,
-	ToolbarGroup
-} from '@wordpress/components';
+	chevronLeft,
+	chevronRight,
+	edit,
+	cancelCircleFilled,
+} from '@wordpress/icons';
 
-const Controls = ({
-					  children,
-					  selectedTab,
-					  moveTab,
-					  selectTab,
-					  deleteTab
-				  }) => {
+import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 
-
-
+const Controls = ( {
+	children,
+	selectedTab,
+	moveTab,
+	selectTab,
+	deleteTab,
+} ) => {
 	/**
 	 * @type {(number|undefined)} The position of the selected tab
 	 */
-	const index = children?.findIndex( ({ clientId }) => clientId === selectedTab );
+	const index = children?.findIndex(
+		( { clientId } ) => clientId === selectedTab
+	);
 
 	/**
 	 * Move the tab to a given direction

@@ -33,7 +33,8 @@ const BlockAppender = ( {
 	const { insertBlock } = useDispatch( 'core/block-editor' );
 	const { getBlock } = useSelect(
 		( select ) => select( 'core/block-editor' ),
-		[]);
+		[]
+	);
 
 	const onClick = () => {
 		const { innerBlocks } = getBlock( clientId );
@@ -46,10 +47,7 @@ const BlockAppender = ( {
 	return (
 		<Button
 			onClick={ onClick }
-			className={ classnames(
-				'o-block-appender-button',
-				className
-			) }
+			className={ classnames( 'o-block-appender-button', className ) }
 			{ ...restProps }
 		>
 			{ buttonText }

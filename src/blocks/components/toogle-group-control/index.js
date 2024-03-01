@@ -6,10 +6,7 @@ import classNames from 'classnames';
 /**
  * WordPress dependencies
  */
-import {
-	ButtonGroup,
-	Button
-} from '@wordpress/components';
+import { ButtonGroup, Button } from '@wordpress/components';
 
 /**
  * Internal dependencies
@@ -22,41 +19,37 @@ import './editor.scss';
  * @param {import('./type').ToggleGroupControlProps} props
  * @returns {JSX.Element}
  */
-const ToogleGroupControl = ({
+const ToogleGroupControl = ( {
 	value,
 	options,
 	onChange,
-	hasIcon = false
-}) => {
+	hasIcon = false,
+} ) => {
 	return (
 		<ButtonGroup
-			className={ classNames(
-				'o-toggle-group-control',
-				{
-					'has-icon': hasIcon
-				}
-			) }
+			className={ classNames( 'o-toggle-group-control', {
+				'has-icon': hasIcon,
+			} ) }
 		>
-			{ options?.map( option => {
+			{ options?.map( ( option ) => {
 				return (
-					<div
-						key={ option?.value }
-						className="o-toggle-option"
-					>
+					<div key={ option?.value } className="o-toggle-option">
 						<Button
 							key={ option?.value }
 							isPrimary={ value == option?.value }
-							variant={ value == option?.value ? 'primary' : 'secondary' }
+							variant={
+								value == option?.value ? 'primary' : 'secondary'
+							}
 							icon={ option?.icon }
 							label={ option?.label }
-							onClick={ () => onChange( option?.value )}
+							onClick={ () => onChange( option?.value ) }
 							showTooltip={ hasIcon }
 						>
 							{ hasIcon ? '' : option?.label }
 						</Button>
 					</div>
 				);
-			}) }
+			} ) }
 		</ButtonGroup>
 	);
 };
