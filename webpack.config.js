@@ -4,5 +4,6 @@ module.exports = {
 	...defaultConfig,
 	externals: {
 		react: 'React',
+		lodash: 'lodash'
 	},
 };
