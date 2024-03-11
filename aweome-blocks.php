@@ -32,6 +32,8 @@ function awesome_blocks_init() {
         'collapsible-text',
 		'tabs/group',
 		'tabs/item',
+		'accordion/group',
+		'accordion/item',
     ];
     foreach ( $blocks_dirs as $blocks_dir ) {
 		register_block_type( __DIR__ . '/build/blocks/blocks/' . $blocks_dir );

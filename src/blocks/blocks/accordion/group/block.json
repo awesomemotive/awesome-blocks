@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "awesome-blocks/accordion",
+	"version": "0.1.0",
+	"title": "Accordion",
+	"category": "text",
+	"description": "Share more content in less space with an accordion that expands and collapses.",
+	"keywords": [ "accordions", "collapse", "faq", "awesome" ],
+	"example": {},
+	"attributes": {
+		"id": {
+			"type": "string"
+		},
+		"FAQSchema": {
+			"type": "boolean"
+		},
+		"gap": {
+			"type": [ "string", "number" ]
+		},
+		"tag": {
+			"type": "string"
+		},
+		"alwaysOpen": {
+			"type": "boolean"
+		},
+		"iconFirst": {
+			"type": "boolean",
+			"default": false
+		},
+		"icon": {
+			"type": "object"
+		}
+	},
+	"supports": {
+		"align": true,
+		"alignWide": true,
+		"customClassName": true,
+		"interactivity": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	},
+	"styles": [
+		{ "name": "default", "label": "Default" },
+		{ "name": "boxed", "label": "Boxed", "isDefault": true }
+	],
+	"textdomain": "awesome-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

@@ -16,18 +16,9 @@ const Controls = ( {
 	selectTab,
 	deleteTab,
 } ) => {
-	/**
-	 * @type {(number|undefined)} The position of the selected tab
-	 */
 	const index = children?.findIndex(
 		( { clientId } ) => clientId === selectedTab
 	);
-
-	/**
-	 * Move the tab to a given direction
-	 *
-	 * @param {('left'|'right')} direction
-	 */
 	const moveTabTo = ( direction ) => {
 		switch ( direction ) {
 			case 'left':

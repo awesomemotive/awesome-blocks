@@ -131,3 +131,59 @@ export const boxToCSS = ( box ) => {
 	return `${_box.top} ${_box.right} ${_box.bottom} ${_box.left}`;
 };
 
+/**
+ * Converts HEX colors to RGBA.
+ *
+ * @param color
+ * @param alpha
+ * @returns {string}
+ */
+export const hex2rgba = ( color, alpha = 100 ) => {
+	if ( ! color ) {
+		color = '#000000';
+	}
+
+	if ( '#' !== color[0]) {
+		return color;
+	}
+
+	const [ r, g, b ] = color.match( /\w\w/g ).map( x => parseInt( x, 16 ) );
+	return `rgba(${r},${g},${b},${alpha / 100})`;
+};
+
+/**
+ * Check if color is a dark.
+ *
+ * @param color
+ * @returns {string|boolean}
+ */
+export const lightnessFromColor = color => {
+	if ( ! color ) {
+		return false;
+	}
+
+	let value = color;
+
+	if ( color.startsWith( 'var(' ) ) {
+		value = getComputedStyle( document.documentElement ).getPropertyValue( color.slice( 4, -1 ) ).trim();
+	}
+
+	// Convert hex to RGB if necessary
+	if ( value.startsWith( '#' ) ) {
+		value = hex2rgba( value );
+	}
+
+	if ( ! Boolean( value ) ) {
+		return false;
+	}
+
+	// Extract the red, green, and blue values
+	const [ r, g, b ] = value.match( /\d+/g ).map( Number );
+
+	// Calculate the brightness value
+	const brightness = ( 0.299 * r ) + ( 0.587 * g ) + ( 0.114 * b );
+
+	// Compare the brightness to a threshold
+	return 128 > brightness ? 'dark' : 'light';
+};
+

@@ -1,0 +1,169 @@
+.wp-block-awesome-blocks-accordion {
+	$block: &;
+	border: none;
+
+	/* Add this to override Neve styles */
+	&[class*="has-dark-"] p, &[class*="has-light-"] p {
+		color: unset;
+	}
+
+	&.has-dark-title-bg > * > * > &-item > &-item__title,
+	&.has-dark-active-title-bg > * > * > &-item.is-open > &-item__title {
+		color: var( --title-color, var( --nv-text-dark-bg , #fff ) );
+	}
+
+	&.has-light-title-bg > * > * > &-item > &-item__title,
+	&.has-light-active-title-bg > * > * > &-item.is-open > &-item__title {
+		color: var( --title-color, var( --nv-text-color , #000 ) );
+	}
+
+	&.has-dark-content-bg &-item__content {
+		color: var( --text-color, var( --nv-text-dark-bg , #fff ) );
+	}
+
+	&.has-light-content-bg &-item__content {
+		color: var( --text-color, var( --nv-text-color , #000 ) );
+	}
+
+	&-item {
+		border: none;
+		margin: var(--gap) 0;
+
+		&:not([ data-align="full"] ) {
+			max-width: 100%;
+		}
+
+		&__title {
+			cursor: pointer;
+
+			.block-editor-rich-text__editable {
+				cursor: text;
+			}
+
+			> * {
+				margin-bottom: 0;
+			}
+
+			svg {
+				fill: var( --title-color );
+				width: 24px;
+				height: 24px;
+			}
+
+			&:hover {
+				filter: brightness( 0.95 );
+			}
+		}
+
+		&__content > * > * > p:last-child {
+			margin-bottom: 0;
+		}
+
+		&:not([ data-align="full"] ) {
+			max-width: 100%;
+		}
+	}
+
+	&.icon-first > * > * > &-item > &-item__title {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		gap: 24px;
+	}
+
+	/* boxed style */
+	&:not( .is-style-default ) &-item {
+		&__title {
+			border: var(--border-width) var(--border-style) var(--border-color);
+		}
+
+		&__content {
+			border: var(--border-width) var(--border-style) var(--border-color);
+			border-top: none;
+		}
+	}
+
+	// when no gap is set, we need to avoid the doubled border between items
+	&:not( .is-style-default ).no-gap > * > * > &-item:not( :first-child ),
+	&:not( .is-style-default ):not( .is-narrow-gap ):not( .is-wide-gap ):not( .is-wider-gap ):not( .has-gap ) > * > * > &-item:not( :first-child ) {
+		#{$block}-item__title {
+			border-top: none;
+		}
+	}
+
+	/* default style */
+	&.is-style-default > * > * > &-item > #{$block}-item__title {
+		border-top: var(--border-width) var(--border-style) var(--border-color);
+	}
+
+	&.is-style-default > * > * > &-item:last-child {
+		&:not([open]):not( .is-open ) > #{$block}-item__title {
+			border-bottom: var(--border-width) var(--border-style) var(--border-color);
+		}
+
+		> #{$block}-item__content {
+			border-bottom: var(--border-width) var(--border-style) var(--border-color);
+		}
+	}
+
+	> .block-editor-inner-blocks {
+		> .block-editor-block-list__layout {
+			> .block-list-appender {
+				position: relative;
+			}
+		}
+	}
+
+	&.is-narrow-gap {
+		> .block-editor-inner-blocks {
+			> .block-editor-block-list__layout {
+				> .block-editor-block-list__block {
+					margin: 5px 0;
+				}
+			}
+		}
+	}
+
+	&.is-wide-gap {
+		> .block-editor-inner-blocks {
+			> .block-editor-block-list__layout {
+				> .block-editor-block-list__block {
+					margin: 10px 0;
+				}
+			}
+		}
+	}
+
+	&.is-wider-gap {
+		> .block-editor-inner-blocks {
+			> .block-editor-block-list__layout {
+				> .block-editor-block-list__block {
+					margin: 20px 0;
+				}
+			}
+		}
+	}
+
+	&:not( .has-icon ) > * > * > &-item:not( .is-open ) > &-item__title::after,
+	&:not( .has-open-icon ) > * > * > &-item.is-open > &-item__title::after {
+		content: '';
+		justify-self: end;
+		align-self: center;
+		border-right: 2px solid currentColor;
+		border-bottom: 2px solid currentColor;
+		width: 8px;
+		height: 8px;
+	}
+
+	&:not( .has-icon ) > * > * > &-item:not( .is-open ) > &-item__title::after {
+		transform: rotate(45deg) translate(-25%, 0%);
+	}
+
+	&:not( .has-open-icon ) > * > * > &-item.is-open > &-item__title::after {
+		transform: rotate(225deg) translate(0%, -45%);
+	}
+}
+
+.accordion-border-control .components-range-control {
+	margin: 0 10px !important;
+}

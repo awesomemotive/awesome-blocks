@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "awesome-blocks/tabs-item",
+	"version": "0.1.0",
+	"title": "Tabs Item",
+	"category": "widgets",
+	"description": "Example block scaffolded with Create Block tool.",
+	"keywords": [ "media", "tab", "item", "awesome" ],
+	"parent": [ "awesome-blocks/tabs" ],
+	"example": {},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"defaultOpen": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "awesome-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

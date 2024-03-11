@@ -1,0 +1,83 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "awesome-blocks/tabs",
+	"version": "0.1.0",
+	"title": "Tabs",
+	"category": "design",
+	"description": "Share more content in less space with an accordion that expand and collapses.",
+	"example": {},
+	"attributes": {
+		"titleAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"titleColor": {
+			"type": "string"
+		},
+		"activeTitleBackgroundColor": {
+			"type": "string"
+		},
+		"titleColor": {
+			"type": "string"
+		},
+		"activeTitleColor": {
+			"type": "string"
+		},
+		"contentTextColor": {
+			"type": "string"
+		},
+		"contentBackgroundColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"activeBorderColor": {
+			"type": "string"
+		},
+		"titlePadding": {
+			"type": "object",
+			"default": {
+				"top": "16px",
+				"right": "16px",
+				"bottom": "16px",
+				"left": "16px"
+			}
+		},
+		"contentPadding": {
+			"type": "object",
+			"default": {
+				"top": "16px",
+				"right": "16px",
+				"bottom": "16px",
+				"left": "16px"
+			}
+		}
+	},
+	"supports": {
+		"align": true,
+		"alignWide": true,
+		"customClassName": true,
+		"interactivity": false,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": false
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	},
+	"styles": [
+		{ "name": "default", "label": "Default" },
+		{ "name": "border", "label": "Border", "isDefault": true },
+		{ "name": "boxed", "label": "Boxed" }
+	],
+	"textdomain": "awesome-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
